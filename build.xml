@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="rigerj" default="compile">
+
+  <property name="lib.dir" value="lib" />
+  <property name="commons-cli.jar" value="${lib.dir}/commons-cli-1.2.jar" />
+  <property name="junit.jar" value="${lib.dir}/junit-4.8.2.jar" />  
+  <property name="one-jar.jar" value="${lib.dir}/one-jar-ant-task-0.96.jar" />
+
+  <property name="resource.dir" value="resources" />
+  <property name="rigerj.mf" value="${resource.dir}/rigerj.mf" />
+
+  <property name="src.dir" value="src" />
+  <property name="test.dir" value="test" />
+  <property name="build.dir" value="build" />
+  <property name="classes.dir" value="${build.dir}/classes" />
+
+  <property name="jar.no.deps" value="${build.dir}/rigerj.jar" />
+  <property name="jar.w.deps" value="${build.dir}/rigerj-w-deps.jar" />
+
+  <path id="rigerj.classpath">
+    <pathelement path="${commons-cli.jar}" />
+  </path>
+
+  <path id="rigerj.test.classpath">
+    <pathelement path="${junit.jar}" />
+    <pathelement path="${classes.dir}" />
+  </path>
+
+  <target name="jar-no-deps"
+          depends="compile"
+          description="build a jar file with no dependencies included">
+    <jar basedir="${classes.dir}" destfile="${jar.no.deps}" />
+  </target>
+
+  <taskdef name="one-jar"
+           classname="com.simontuffs.onejar.ant.OneJarTask" 
+           classpath="${one-jar.jar}"
+           onerror="report" />
+
+  <target name="jar-w-deps"
+          depends="compile"
+          description="build a jar file with dependencies included">
+    <one-jar destfile="${jar.w.deps}" manifest="${rigerj.mf}">
+      <main>
+        <fileset dir="${classes.dir}" />
+      </main>
+      <lib>
+        <fileset file="${commons-cli.jar}" />
+      </lib>
+    </one-jar>
+  </target>
+
+  <target name="compile" description="compile RigerJ source">
+    <javac srcdir="${src.dir}"
+           destdir="${classes.dir}"
+           classpathref="rigerj.classpath"
+           source="1.5"
+           target="1.5"
+           debug="true">
+    </javac>
+  </target>
+
+  <target name="compile-test" description="compile RigerJ tests">
+    <javac srcdir="${test.dir}"
+           destdir="${classes.dir}"
+           classpathref="rigerj.test.classpath"
+           source="1.5"
+           target="1.5"
+           debug="true">
+    </javac>
+  </target>
+
+  <target name="test"
+          depends="compile,compile-test"
+          description="run tests">
+    <junit>
+      <classpath refid="rigerj.test.classpath" />
+      <formatter type="brief" usefile="false" />
+      <test name="RigerImplTest" />
+    </junit>
+  </target>
+
+  <target name="clean">
+    <delete includeemptydirs="true">
+      <fileset dir="${classes.dir}" includes="*/**" excludes=".svn/**" defaultexcludes="no" />
+    </delete>
+    <delete file="${jar.no.deps}" />
+    <delete file="${jar.w.deps}" />
+    <delete>
+      <fileset dir="." includes="**/*~" defaultexcludes="no" />
+    </delete>
+  </target>
+
+</project>
