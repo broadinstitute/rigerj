@@ -150,17 +150,11 @@ public class RigerImpl implements RigerAlgorithm {
     /**
      * Sorts {@link HairpinData HairpinDatas} by {@link HairpinData#getHairpinScore()} in ascending order
      */
-    private static final class HairpinScoreAscendingComparator implements Comparator<HairpinData> {
+    static final class HairpinScoreAscendingComparator implements Comparator<HairpinData> {
         public int compare(HairpinData hairpinData1, HairpinData hairpinData2) {
             final double hairpin1Score = hairpinData1.getHairpinScore();
             final double hairpin2Score = hairpinData2.getHairpinScore();
-            if (hairpin1Score < hairpin2Score) {
-                return -1; // hairpinData1 < hairpinData2
-            }
-            if (hairpin1Score > hairpin2Score) {
-                return 1; // hairpinData1 > hairpinData2
-            }
-            return 0; // hairpinData1 == hairpinData2
+            return Double.compare(hairpin1Score, hairpin2Score);
         }
     }
 
