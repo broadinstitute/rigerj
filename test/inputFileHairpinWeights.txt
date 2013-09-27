@@ -1,4 +1,4 @@
-Construct	GeneSymbol	NormalizedScore	Construct Rank	HairpinWeight
+Construct	Target	Normalized Score	Construct Rank	Construct Weight
 TRCN0000075222m_st	GFPT1	0.34	27787	1
 TRCN0000059675m_st	HIAT1	0.60	22746	1
 TRCN0000013911m_st	ERF	1.6	8780	1

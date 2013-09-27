@@ -42,7 +42,7 @@ import org.junit.runners.Parameterized.Parameters;
 public class RigerImplTest {
 
     private static final String TEST_INPUT_FILENAME = "test/inputFile.txt";
-    private static final String INPUT_HEADERS = "Construct\tGeneSymbol\tNormalizedScore\tConstruct Rank";
+    private static final String INPUT_HEADERS = "Construct\tTarget\tNormalized Score\tConstruct Rank";
     private static final long RANDOM_SEED = 1003;
 
     private static List<HairpinInput> hairpinInputs;
