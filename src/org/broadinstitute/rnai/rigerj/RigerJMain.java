@@ -35,12 +35,12 @@ import org.broadinstitute.rnai.rigerj.impl.RigerImpl;
 public class RigerJMain {
 
     private static final String VERSION_STRING =
-        "RigerJ 1.6\n\n" +
+        "RigerJ 1.7.0\n\n" +
         "For usage instructions, see https://www.broadinstitute.org/twiki/bin/view/RNAiplatform/RigerJ";
 
-    private static final String INPUT_HEADERS_WITH_WEIGHTS = "Construct\tGeneSymbol\tNormalizedScore\tConstruct Rank\tHairpinWeight";
-    private static final String INPUT_HEADERS_WITHOUT_WEIGHTS = "Construct\tGeneSymbol\tNormalizedScore\tConstruct Rank";
-    private static final String OUTPUT_HEADERS = "Gene Rank\tGene Name\tScore\tp-value\tp-value Rank\tHairpin Ranks";
+    private static final String INPUT_HEADERS_WITH_WEIGHTS = "Construct\tTarget\tNormalizedScore\tConstruct Rank\tConstruct Weight";
+    private static final String INPUT_HEADERS_WITHOUT_WEIGHTS = "Construct\tTarget\tNormalized Score\tConstruct Rank";
+    private static final String OUTPUT_HEADERS = "Gene Rank\tGene Name\tScore\tp-value\tp-value Rank\tConstruct Ranks";
     
     private static final String DEFAULT_SCORING_METHOD = HairpinSetScoringMethod.KOLMOGOROV_SMIRNOV.getParameterName();
     private static final boolean DEFAULT_FLATTEN_WEIGHTS = true;
