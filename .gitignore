@@ -1,0 +1,34 @@
+#------------------------------------------------------------------------------
+# Standard ignores for all of our Scala projects.
+#------------------------------------------------------------------------------
+
+*.orig
+*.rej
+*~
+*.o
+*.pyc
+*.pyo
+*.elc
+*.class
+*.log
+\#*
+.\#*
+TAGS
+.cache
+.DS_Store
+target/
+/logs/
+/README.html
+/.project
+/.settings
+/.classpath
+/.scala_dependencies
+/.idea/
+/project/target/
+/links/
+/scaladoc/
+/.worksheet/
+
+#------------------------------------------------------------------------------
+# Project-specific ignores go below this line.
+#------------------------------------------------------------------------------
