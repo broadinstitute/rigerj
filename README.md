@@ -81,7 +81,14 @@ order, separated by tabs:
 Unfortunately, you will have to provide the hairpin ranks yourself.
 
 --- Output File Format ---
-TODO
+RigerJ outputs the data with the following column headers:
+
+* Gene Rank
+* Gene Name
+* Score
+* p-value
+* p-value rank
+* Hairpin ranks
 
 --- Release History ___
 
@@ -98,11 +105,3 @@ TODO
 * RigerJ 1.5b - Experimental extension to RIGER to apply weights to the hairpins. Original beta 2010-05-14.
 * RigerJ 1.6 - Fix bug where -adjustForHairpinSetSize command line option was not working.
                Fix off-by-one bug for gene scores with WtSum and!SecondBestRank scoring methods.
-
---- List of RigerJ users ---
-
-These users should be notified when a new version of RigerJ is released:
-
-rnaiinformatics@broadinstitute.org (RNAi Informatics Team)
-bweir@broadinstitute.org (Barbara Weir)
-jgould@broadinstitute.org (Joshua Gould)
