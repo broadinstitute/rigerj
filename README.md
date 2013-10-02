@@ -84,11 +84,17 @@ Unfortunately, you will have to provide the hairpin ranks yourself.
 RigerJ outputs the data with the following column headers:
 
 * Gene Rank
+  * The Gene rank.
 * Gene Name
+  * Gene Name, as provided in input file.
 * Score
+  * Gene based score.
 * p-value
+  * The calculated p-value.
 * p-value rank
+  * Rank of the p-value for the gene.
 * Hairpin ranks
+  * List of the individual hairpin ranks for given gene.
 
 --- Release History ___
 
