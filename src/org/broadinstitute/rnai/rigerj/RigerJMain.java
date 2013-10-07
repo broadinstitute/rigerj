@@ -2,16 +2,6 @@
 
 package org.broadinstitute.rnai.rigerj;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintStream;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.GnuParser;
@@ -27,6 +17,16 @@ import org.broadinstitute.rnai.rigerj.api.RigerOutputs;
 import org.broadinstitute.rnai.rigerj.impl.HairpinData;
 import org.broadinstitute.rnai.rigerj.impl.RigerImpl;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintStream;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
 /**
  * Command line utility for running "RigerJ".
  *
@@ -38,10 +38,10 @@ public class RigerJMain {
         "RigerJ 1.7.0\n\n" +
         "For usage instructions, see https://www.broadinstitute.org/twiki/bin/view/RNAiplatform/RigerJ";
 
-    private static final String INPUT_HEADERS_WITH_WEIGHTS = "Construct\tTarget\tNormalizedScore\tConstruct Rank\tConstruct Weight";
+    private static final String INPUT_HEADERS_WITH_WEIGHTS = "Construct\tTarget\tNormalized Score\tConstruct Rank\tConstruct Weight";
     private static final String INPUT_HEADERS_WITHOUT_WEIGHTS = "Construct\tTarget\tNormalized Score\tConstruct Rank";
     private static final String OUTPUT_HEADERS = "Gene Rank\tGene Name\tScore\tp-value\tp-value Rank\tConstruct Ranks";
-    
+
     private static final String DEFAULT_SCORING_METHOD = HairpinSetScoringMethod.KOLMOGOROV_SMIRNOV.getParameterName();
     private static final boolean DEFAULT_FLATTEN_WEIGHTS = true;
     private static final int DEFAULT_NUM_RANDOM_GENES_PER_SET_SIZE = 10000;
@@ -61,7 +61,7 @@ public class RigerJMain {
         final Options options = initializeOptions();
         commandLine = parseCommandLine(args, options);
     }
-    
+
     @SuppressWarnings("static-access")
     private static Options initializeOptions() {
         Options options = new Options();
@@ -204,7 +204,7 @@ public class RigerJMain {
                                              new Double(cells[2]),
                                              cells[1],
                                              cells.length == 5 ? new Double(cells[4]) : 1));
-            
+
         }
         return hairpinDatas;
     }
@@ -215,7 +215,7 @@ public class RigerJMain {
             return new BufferedReader(new FileReader(inputFilename));
         }
         else {
-            return new BufferedReader(new InputStreamReader(System.in));            
+            return new BufferedReader(new InputStreamReader(System.in));
         }
     }
 

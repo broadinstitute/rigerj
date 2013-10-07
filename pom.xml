@@ -7,7 +7,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.broadinstitute.rnai</groupId>
   <artifactId>rigerj</artifactId>
-  <version>1.6.1</version>
+  <version>1.7.0</version>
   <name>RigerJ</name>
   <url>http://www.broadinstitute.org/rnai_platform</url>
 
