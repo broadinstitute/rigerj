@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
->
+<project
+    xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.broadinstitute.rnai</groupId>
   <artifactId>rigerj</artifactId>
-  <version>1.7.0</version>
+  <version>1.6.1</version>
   <name>RigerJ</name>
   <url>http://www.broadinstitute.org/rnai_platform</url>
 
@@ -24,19 +25,25 @@
     </dependency>
   </dependencies>
 
+  <distributionManagement>
+    <repository>
+      <uniqueVersion>false</uniqueVersion>
+      <id>rnaivm3-nexus</id>
+      <url>http://rnaivm3.broadinstitute.org:10080/nexus/content/repositories/releases</url>
+      <layout>default</layout>
+    </repository>
+  </distributionManagement>
+
   <build>
     <sourceDirectory>src</sourceDirectory>
     <testSourceDirectory>test</testSourceDirectory>
 
     <plugins>
-
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-	      <version>2.3.2</version>
+        <version>2.3.2</version>
         <configuration>
-          <source>1.5</source>
-          <target>1.5</target>
           <encoding>UTF-8</encoding>
         </configuration>
       </plugin>
@@ -44,6 +51,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-source-plugin</artifactId>
+        <version>2.2.1</version>
         <executions>
           <execution>
             <id>attach-sources</id>
@@ -57,6 +65,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
+        <version>2.9.1</version>
         <executions>
           <execution>
             <id>attach-javadocs</id>
@@ -72,8 +81,8 @@
 
   <repositories>
     <repository>
-      <id>rnaivm1-nexus</id>
-      <url>http://rnaivm1.broadinstitute.org:28080/nexus/content/groups/public</url>
+      <id>rnaivm3-nexus</id>
+      <url>http://rnaivm3.broadinstitute.org:10080/nexus/content/groups/public</url>
       <releases>
         <enabled>true</enabled>
       </releases>
@@ -82,8 +91,8 @@
       </snapshots>
     </repository>
     <repository>
-      <id>rnaivm1-nexus-snaps</id>
-      <url>http://rnaivm1.broadinstitute.org:28080/nexus/content/groups/public-snapshots</url>
+      <id>rnaivm3-nexus-snaps</id>
+      <url>http://rnaivm3.broadinstitute.org:10080/nexus/content/groups/public-snapshots</url>
       <releases>
         <enabled>false</enabled>
       </releases>
@@ -95,8 +104,8 @@
 
   <pluginRepositories>
     <pluginRepository>
-      <id>rnaivm1-nexus</id>
-      <url>http://rnaivm1.broadinstitute.org:28080/nexus/content/groups/public</url>
+      <id>rnaivm3-nexus</id>
+      <url>http://rnaivm3.broadinstitute.org:10080/nexus/content/groups/public</url>
       <releases>
         <enabled>true</enabled>
       </releases>
@@ -105,8 +114,8 @@
       </snapshots>
     </pluginRepository>
     <pluginRepository>
-      <id>rnaivm1-nexus-snapshots</id>
-      <url>http://rnaivm1.broadinstitute.org:28080/nexus/content/groups/public-snapshots</url>
+      <id>rnaivm3-nexus-snapshots</id>
+      <url>http://rnaivm3.broadinstitute.org:10080/nexus/content/groups/public-snapshots</url>
       <releases>
         <enabled>false</enabled>
       </releases>
