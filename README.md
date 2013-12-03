@@ -72,14 +72,23 @@ The input file format is a little stringent, requiring exactly the following col
 order, separated by tabs:
 
 1. Construct
+
    > The name of the hairpin.
+
 2. GeneSymbol
+
    > A unique name for the gene.
+
 3. NormalizedScore
+
    > The hairpin score.
+
 4. Construct Rank
+
    > The hairpin rank.
+
 5. HairpinWeight
+
    > A weight to apply to the hairpin. Should be between 0 and 1. 0 means completely discount the hairpin.
    > 1 means give it full weight. This is currently only used by KSbyScore scoring algorithm.
 
