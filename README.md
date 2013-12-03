@@ -65,7 +65,8 @@ times the best rank.
 
 * Second Best Rank - This method scores the gene as the rank of the second best ranking hairpin for the gene.
 
---- Input File Format ---
+Input File Format
+-----------------
 
 The input file format is a little stringent, requiring exactly the following column headers, in the given
 order, separated by tabs:
@@ -84,7 +85,9 @@ order, separated by tabs:
 
 Unfortunately, you will have to provide the hairpin ranks yourself.
 
---- Output File Format ---
+Output File Format
+------------------
+
 RigerJ outputs the data with the following column headers:
 
 * Gene Rank
@@ -100,7 +103,8 @@ RigerJ outputs the data with the following column headers:
 * Hairpin ranks
   * List of the individual hairpin ranks for given gene.
 
---- Release History ___
+Release History
+---------------
 
 * RigerJ 1.0 - Initial Java implementation of RIGER. Release date circa 2009-11-25.
 * RigerJ 1.1 - Fixed bug where low gene ranks were given high p-values for 2nd-best and weighted-sum
