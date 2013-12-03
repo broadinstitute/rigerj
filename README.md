@@ -1,4 +1,4 @@
-README last updated: 9/30/2013 (based on J Sullivan's twiki created 6/2013)
+README last updated: 12/3/2013 (based on J Sullivan's twiki created 6/2013)
 
 rigerj
 ======
@@ -71,17 +71,17 @@ Input File Format
 The input file format is a little stringent, requiring exactly the following column headers, in the given
 order, separated by tabs:
 
-* Construct
-  * The name of the hairpin.
-* GeneSymbol
-  * A unique name for the gene.
-* NormalizedScore
-  * The hairpin score.
-* Construct Rank
-  * The hairpin rank.
-* HairpinWeight
-  * A weight to apply to the hairpin. Should be between 0 and 1. 0 means completely discount the hairpin.
-    1 means give it full weight. This is currently only used by KSbyScore scoring algorithm.
+1. Construct
+  > The name of the hairpin.
+2. GeneSymbol
+  > A unique name for the gene.
+3. NormalizedScore
+  > The hairpin score.
+4. Construct Rank
+  > The hairpin rank.
+5. HairpinWeight
+  > A weight to apply to the hairpin. Should be between 0 and 1. 0 means completely discount the hairpin.
+  > 1 means give it full weight. This is currently only used by KSbyScore scoring algorithm.
 
 Unfortunately, you will have to provide the hairpin ranks yourself.
 
@@ -119,3 +119,4 @@ Release History
 * RigerJ 1.5b - Experimental extension to RIGER to apply weights to the hairpins. Original beta 2010-05-14.
 * RigerJ 1.6 - Fix bug where -adjustForHairpinSetSize command line option was not working.
                Fix off-by-one bug for gene scores with WtSum and!SecondBestRank scoring methods.
+
