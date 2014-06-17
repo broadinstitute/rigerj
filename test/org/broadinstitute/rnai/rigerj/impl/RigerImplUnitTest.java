@@ -121,8 +121,7 @@ public class RigerImplUnitTest {
         for (final double d2 : data) {
             if (Double.isNaN(d1) || Double.isNaN(d2)) {
                 continue;
-            }
-            else {
+            } else {
                 assert d1 <= d2: String.format("%f should be <= %f", d1, d2);
                 d1 = d2;
             }
@@ -134,8 +133,7 @@ public class RigerImplUnitTest {
         for (final double d2 : data) {
             if (Double.isNaN(d1) || Double.isNaN(d2)) {
                 continue;
-            }
-            else {
+            } else {
                 assert d1 >= d2: String.format("%f should be >= %f", d1, d2);
                 d1 = d2;
             }
