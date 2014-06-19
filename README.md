@@ -127,5 +127,6 @@ Release History
                Release date circa 2010-03-29.
 * RigerJ 1.5b - Experimental extension to RIGER to apply weights to the hairpins. Original beta 2010-05-14.
 * RigerJ 1.6 - Fix bug where -adjustForHairpinSetSize command line option was not working.
-               Fix off-by-one bug for gene scores with WtSum and!SecondBestRank scoring methods.
+               Fix off-by-one bug for gene scores with WtSum and SecondBestRank scoring methods.
+* RigerJ 1.6.1 - Fix bug where sorting hairpins by score failed if scores were undefined
 
