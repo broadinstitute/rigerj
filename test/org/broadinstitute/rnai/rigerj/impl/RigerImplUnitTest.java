@@ -98,4 +98,98 @@ public class RigerImplUnitTest {
         }
     }
 
+    @Test
+    public void testGeneScoreComparators() {
+        double[] scores = new double[] { 1.0, Double.NaN, -3.1, 0.2, 23.0, Double.NaN, 0.1119, 7.22 };
+        GeneData[] data = createGeneDataFromScores(scores);
+        Arrays.sort(data, new RigerImpl.GeneScoreAscendingComparator());
+        assertAscending(getScoresFromGeneData(data));
+        Arrays.sort(data, new RigerImpl.GeneScoreDescendingComparator());
+        assertDescending(getScoresFromGeneData(data));
+    }
+
+    @Test
+    public void testGenePValueComparator() {
+        double[] pvals = new double[] { 288.32, -17.255, 1.0, Double.NaN, 0.2, 23.0, Double.NaN, 0.1119, 7.22 };
+        GeneData[] data = createGeneDataFromPValues(pvals);
+        Arrays.sort(data, new RigerImpl.PValueAscendingComparator());
+        assertAscending(getPValuesFromGeneData(data));
+    }
+
+    private void assertAscending(double[] data) {
+        double d1 = data[0];
+        for (final double d2 : data) {
+            if (Double.isNaN(d1) || Double.isNaN(d2)) {
+                continue;
+            } else {
+                assert d1 <= d2: String.format("%f should be <= %f", d1, d2);
+                d1 = d2;
+            }
+        }
+    }
+
+    private void assertDescending(double[] data) {
+        double d1 = data[0];
+        for (final double d2 : data) {
+            if (Double.isNaN(d1) || Double.isNaN(d2)) {
+                continue;
+            } else {
+                assert d1 >= d2: String.format("%f should be >= %f", d1, d2);
+                d1 = d2;
+            }
+        }
+    }
+
+    private GeneData createGeneDataFromScore(double score) {
+        GeneData gd = new GeneData();
+        gd.geneRank = 1;
+        gd.geneName = "ABC";
+        gd.geneScore = score;
+        gd.pValue = 0.05;
+        gd.pValueRank = 1;
+        return gd;
+    }
+
+    private GeneData createGeneDataFromPValue(double pval) {
+        GeneData gd = new GeneData();
+        gd.geneRank = 1;
+        gd.geneName = "ABC";
+        gd.geneScore = 0.123;
+        gd.pValue = pval;
+        gd.pValueRank = 1;
+        return gd;
+    }
+
+    private GeneData[] createGeneDataFromScores(double[] scores) {
+        GeneData[] gds = new GeneData[scores.length];
+        for (int i = 0; i < gds.length; i++) {
+            gds[i] = createGeneDataFromScore(scores[i]);
+        }
+        return gds;
+    }
+
+    private GeneData[] createGeneDataFromPValues(double[] pvals) {
+        GeneData[] gds = new GeneData[pvals.length];
+        for (int i = 0; i < gds.length; i++) {
+            gds[i] = createGeneDataFromPValue(pvals[i]);
+        }
+        return gds;
+    }
+
+    private double[] getScoresFromGeneData(GeneData[] gds) {
+        double[] scores = new double[gds.length];
+        for (int i = 0; i < gds.length; i++) {
+            scores[i] = gds[i].getGeneScore();
+        }
+        return scores;
+    }
+
+    private double[] getPValuesFromGeneData(GeneData[] gds) {
+        double[] pvals = new double[gds.length];
+        for (int i = 0; i < gds.length; i++) {
+            pvals[i] = gds[i].getPValue();
+        }
+        return pvals;
+    }
+
 }
