@@ -3,11 +3,7 @@ package org.broadinstitute.rnai.rigerj.impl;
 import org.junit.Test;
 
 import java.util.Arrays;
-//import java.util.Random;
 
-/**
- * @author <a href="http://www.broadinstitute.org/rnai_platform">Broad Institute, RNAi Platform</a>
- */
 public class RigerImplUnitTest {
     // This block is used to generate test data randomly that causes the code to fail
     /*

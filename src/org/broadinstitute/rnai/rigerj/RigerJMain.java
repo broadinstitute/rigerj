@@ -1,5 +1,7 @@
-// org.broadinstitute.rnai.rigerj.RigerJMain
-
+/*
+ * Copyright 2014. The Broad Institute of Harvard and MIT.
+ * http://www.broadinstitute.org
+ */
 package org.broadinstitute.rnai.rigerj;
 
 import org.apache.commons.cli.CommandLine;
@@ -29,8 +31,6 @@ import java.util.List;
 
 /**
  * Command line utility for running "RigerJ".
- *
- * @author <a href="http://www.broad.mit.edu/rnai_platform">Broad Institute, RNAi Platform</a>
  */
 public class RigerJMain {
 
@@ -40,7 +40,7 @@ public class RigerJMain {
 
     private static final String INPUT_HEADERS_WITH_WEIGHTS = "Construct\tTarget\tNormalized Score\tConstruct Rank\tConstruct Weight";
     private static final String INPUT_HEADERS_WITHOUT_WEIGHTS = "Construct\tTarget\tNormalized Score\tConstruct Rank";
-    private static final String OUTPUT_HEADERS = "Gene Rank\tGene Name\tScore\tp-value\tp-value Rank\tConstruct Ranks";
+    private static final String OUTPUT_HEADERS = "Target Rank\tTarget Name\tScore\tp-value\tp-value Rank\tConstruct Ranks";
 
     private static final String DEFAULT_SCORING_METHOD = HairpinSetScoringMethod.KOLMOGOROV_SMIRNOV.getParameterName();
     private static final boolean DEFAULT_FLATTEN_WEIGHTS = true;
