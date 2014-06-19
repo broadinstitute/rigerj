@@ -357,34 +357,22 @@ public class RigerImpl implements RigerAlgorithm {
     /**
      * Sorts {@link GeneData GeneDatas} by {@link GeneData#getGeneScore()} in descending order
      */
-    private static final class GeneScoreDescendingComparator implements Comparator<GeneData> {
+    static final class GeneScoreDescendingComparator implements Comparator<GeneData> {
         public int compare(GeneData geneData1, GeneData geneData2) {
             final double gene1Score = geneData1.getGeneScore();
             final double gene2Score = geneData2.getGeneScore();
-            if (gene1Score > gene2Score) {
-                return -1; // geneData1 < geneData2
-            }
-            if (gene1Score < gene2Score) {
-                return 1; // geneData1 > geneData2
-            }
-            return 0; // geneData1 == geneData2
+            return Double.compare(gene2Score, gene1Score);
         }
     }
 
     /**
      * Sorts {@link GeneData GeneDatas} by {@link GeneData#getGeneScore()} in ascending order
      */
-    private static final class GeneScoreAscendingComparator implements Comparator<GeneData> {
+    static final class GeneScoreAscendingComparator implements Comparator<GeneData> {
         public int compare(GeneData geneData1, GeneData geneData2) {
             final double gene1Score = geneData1.getGeneScore();
             final double gene2Score = geneData2.getGeneScore();
-            if (gene1Score > gene2Score) {
-                return 1; // geneData1 > geneData2
-            }
-            if (gene1Score < gene2Score) {
-                return -1; // geneData1 < geneData2
-            }
-            return 0; // geneData1 == geneData2
+            return Double.compare(gene1Score, gene2Score);
         }
     }
 
@@ -403,17 +391,11 @@ public class RigerImpl implements RigerAlgorithm {
     /**
      * Sorts {@link GeneData GeneDatas} by {@link GeneData#getPValue()} in ascending order
      */
-    private static final class PValueAscendingComparator implements Comparator<GeneData> {
+    static final class PValueAscendingComparator implements Comparator<GeneData> {
         public int compare(GeneData geneData1, GeneData geneData2) {
             final double gene1PValue = geneData1.getPValue();
             final double gene2PValue = geneData2.getPValue();
-            if (gene1PValue < gene2PValue) {
-                return -1; // geneData1 < geneData2
-            }
-            if (gene1PValue > gene2PValue) {
-                return 1; // geneData1 > geneData2
-            }
-            return 0; // geneData1 == geneData2
+            return Double.compare(gene1PValue, gene2PValue);
         }
     }
 
