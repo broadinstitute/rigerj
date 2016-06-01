@@ -119,7 +119,6 @@ RigerJ outputs the data with the following column headers:
   * Rank of the p-value for the gene.
 * Hairpin ranks
   * List of the individual hairpin ranks for given gene.
-  
 
 --- Release History ___
 
