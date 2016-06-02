@@ -61,6 +61,30 @@ times the best rank.
 
 * Second Best Rank - This method scores the gene as the rank of the second best ranking hairpin for the gene.
 
+--- Notes on Scoring and Statistical Methods ---
+
+The following descriptions of how the scoring and statistical methods are computed within RIGER were adapted by 
+answers provided by Shuba Gopal, and may be useful to describe these methods to laypersons.
+
+Weighted Sum (WtSum): rank orders the observed scores for shRNAs for a given gene and then heavily weights 
+the first and second highest ranking shRNAs before computing a sum of all the shRNA scores (see description above).
+
+Second Best: similar to Weighted Sum, but takes the score of the second highest ranking shRNA as the score for
+a given gene.
+
+Kolmogorov-Smirnov (KSbyScore): computes a cumulative score based on rank ordering *all* the shRNAs in the pool, 
+regardless of gene mapping.  Then starting at the top of the rank ordering and moving sequentially down the list, 
+for each shRNA that maps to the gene of interest, adds the score of the shRNA to a running sum.  For each shRNA 
+in the rank ordered list that is not mapped to the gene of interest, you subtract a fraction of its score from 
+the running sum.  This essentially scores genes based on whether all their shRNAs score consistently at 
+the top of the rank ordering as very strong hits and genes with a more mixed profile of some high scoring and 
+some moderate scoring shRNAs as weaker hits.
+
+p-value calculation: calculated by creating a null distribution. This involves scrambling the mapping of shRNAs to genes, 
+and then randomly assembling sets of shRNAs to map to each gene.  For each score from a real mapping of shRNAs to a gene, 
+the score is compared to all the scores from the scrambled mapping of shRNAs to genes.  The proportion of scores in the 
+scrambled set that are as good as or better than the observed real score is used to compute the p-value.
+
 --- Input File Format ---
 
 The input file format is a little stringent, requiring exactly the following column headers, in the given 
