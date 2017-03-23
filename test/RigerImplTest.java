@@ -95,25 +95,25 @@ public class RigerImplTest {
         
         // adjustForHairpinSetSize
         addTestParams(true, 1.0, HairpinSetScoringMethod.KOLMOGOROV_SMIRNOV, 10000, RANDOM_SEED, true,
-                      "SFRS2", 3.276132782650146, 1, -1.0E-4, 48, "991 1188 1280 1285 1371 1495 2386 2722 4934 5700 5985 6860 7484 8754 9471 9791 12989 14118 16937 17327 17735 20735 21343 21763 21944 22604 23861 24848 29370 40777 41843 ",
+                      "SFRS2", 3.247443724166093, 1, -1.0E-4, 53, "991 1188 1280 1285 1371 1495 2386 2722 4934 5700 5985 6860 7484 8754 9471 9791 12989 14118 16937 17327 17735 20735 21343 21763 21944 22604 23861 24848 29370 40777 41843 ",
                       "MXRA5", -1.8018072138310683, 9480, 0.9998, 9480, "24143 30533 43076 44960 44961 ");
         addTestParams(true, 1.0, HairpinSetScoringMethod.WEIGHTED_SUM, 10000, RANDOM_SEED, true,
-                      "EIF5B", 2.2433890130023088E-4, 1, 1.0E-4, 4, "3 7 91 39242 ",
+                      "EIF5B", 2.2433890130023088E-4, 1, 1.0E-4, 2, "3 7 91 39242 ",
                       "LPXN", 1.7934964358004049, 9480, 1.0001, 9480, "38968 41356 42093 44005 44855 ");
         addTestParams(true, 1.0, HairpinSetScoringMethod.SECOND_BEST_RANK, 10000, RANDOM_SEED, true,
-                      "EIF5B", 2.2893772893772894E-4, 1, 1.0E-4, 3, "3 7 91 39242 ",
-                      "SLC16A6", 1.6563798676312145, 9480, 1.0001, 9476, "16965 43046 43981 44091 44794 ");
+                      "EIF5B", 2.2893772893772894E-4, 1, 1.0E-4, 2, "3 7 91 39242 ",
+                      "SLC16A6", 1.6563798676312145, 9480, 1.0, 9478, "16965 43046 43981 44091 44794 ");
 
         // !adjustForHairpinSetSize
         addTestParams(true, 1.0, HairpinSetScoringMethod.KOLMOGOROV_SMIRNOV, 10000, RANDOM_SEED, false,
-                      "EIF5B", 0.96912, 1, -1.0E-4, 28, "3 7 91 39242 ",
-                      "CHST6", -0.98941, 9480, 0.9994, 9479, "44475 44843 ");
+                      "EIF5B", 0.96914, 1, -1.0E-4, 12, "3 7 91 39242 ",
+                      "CHST6", -0.98939, 9480, 0.9996, 9479, "44475 44843 ");
         addTestParams(true, 1.0, HairpinSetScoringMethod.WEIGHTED_SUM, 10000, RANDOM_SEED, false,
-                      "EIF5B", 6.0, 1, 1.0E-4, 4, "3 7 91 39242 ",
-                      "CHST6", 44751.0, 9480, 0.9998, 9476, "44475 44843 ");
+                      "EIF5B", 6.0, 1, 1.0E-4, 2, "3 7 91 39242 ",
+                      "CHST6", 44751.0, 9480, 0.9999, 9476, "44475 44843 ");
         addTestParams(true, 1.0, HairpinSetScoringMethod.SECOND_BEST_RANK, 10000, RANDOM_SEED, false,
-                      "EIF5B", 7.0, 1, 1.0E-4, 3, "3 7 91 39242 ",
-                      "CHST6", 44843.0, 9480, 0.9944, 9409, "44475 44843 ");
+                      "EIF5B", 7.0, 1, 1.0E-4, 2, "3 7 91 39242 ",
+                      "CHST6", 44843.0, 9480, 0.9945, 9407, "44475 44843 ");
     }
 
     private static void addTestParams(boolean flattenWeights,
