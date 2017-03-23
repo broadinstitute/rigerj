@@ -35,7 +35,7 @@ import org.broadinstitute.rnai.rigerj.impl.RigerImpl;
 public class RigerJMain {
 
     private static final String VERSION_STRING =
-        "RigerJ 1.6\n\n" +
+        "RigerJ 1.7\n\n" +
         "For usage instructions, see https://www.broadinstitute.org/twiki/bin/view/RNAiplatform/RigerJ";
 
     private static final String INPUT_HEADERS_WITH_WEIGHTS = "Construct\tGeneSymbol\tNormalizedScore\tConstruct Rank\tHairpinWeight";
