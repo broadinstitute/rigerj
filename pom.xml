@@ -28,10 +28,16 @@
   <distributionManagement>
     <repository>
       <uniqueVersion>false</uniqueVersion>
-      <id>rnaivm3-nexus</id>
-      <url>http://rnaivm3.broadinstitute.org:10080/nexus/content/repositories/releases</url>
+      <id>gpp-nexus</id>
+      <url>http://gppops1.broadinstitute.org:8081/repository/maven-releases/</url>
       <layout>default</layout>
     </repository>
+    <snapshotRepository>
+      <uniqueVersion>false</uniqueVersion>
+      <id>gpp-nexus-snaps</id>
+      <url>http://gppops1.broadinstitute.org:8081/repository/maven-snapshots/</url>
+      <layout>default</layout>
+    </snapshotRepository>
   </distributionManagement>
 
   <build>
@@ -79,10 +85,11 @@
     </plugins>
   </build>
 
+  <!-- Uncomment this to use the locally cached artifacts
   <repositories>
     <repository>
-      <id>rnaivm3-nexus</id>
-      <url>http://rnaivm3.broadinstitute.org:10080/nexus/content/groups/public</url>
+      <id>gpp-nexus</id>
+      <url>http://gppops1.broadinstitute.org:8081/repository/maven-releases/</url>
       <releases>
         <enabled>true</enabled>
       </releases>
@@ -91,8 +98,8 @@
       </snapshots>
     </repository>
     <repository>
-      <id>rnaivm3-nexus-snaps</id>
-      <url>http://rnaivm3.broadinstitute.org:10080/nexus/content/groups/public-snapshots</url>
+      <id>gpp-nexus-snaps</id>
+      <url>http://gppops1.broadinstitute.org:8081/repository/maven-snapshots/</url>
       <releases>
         <enabled>false</enabled>
       </releases>
@@ -104,8 +111,8 @@
 
   <pluginRepositories>
     <pluginRepository>
-      <id>rnaivm3-nexus</id>
-      <url>http://rnaivm3.broadinstitute.org:10080/nexus/content/groups/public</url>
+      <id>gpp-nexus</id>
+      <url>http://gppops1.broadinstitute.org:8081/repository/maven-releases/</url>
       <releases>
         <enabled>true</enabled>
       </releases>
@@ -114,8 +121,8 @@
       </snapshots>
     </pluginRepository>
     <pluginRepository>
-      <id>rnaivm3-nexus-snapshots</id>
-      <url>http://rnaivm3.broadinstitute.org:10080/nexus/content/groups/public-snapshots</url>
+      <id>gpp-nexus-snapshots</id>
+      <url>http://gppops1.broadinstitute.org:8081/repository/maven-snapshots/</url>
       <releases>
         <enabled>false</enabled>
       </releases>
@@ -124,5 +131,6 @@
       </snapshots>
     </pluginRepository>
   </pluginRepositories>
+  -->
 
 </project>
