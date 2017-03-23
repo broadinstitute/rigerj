@@ -2,10 +2,13 @@
 
 package org.broadinstitute.rnai.rigerj.impl;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Random;
 import java.util.Set;
@@ -200,9 +203,12 @@ public class RigerImpl implements RigerAlgorithm {
     }
 
     private void computeGeneScoresAndPValues() {
-        for (Map.Entry<Integer,Set<GeneData>> mapEntry : geneSetSizeToGeneDatasMap.entrySet()) {
-            final int geneSetSize = mapEntry.getKey();
-            final Set<GeneData> geneDatas = mapEntry.getValue();
+        // we sort the gene datas first so that the same inputs will get the same
+        // random seeds in computeGeneScoresAndPValues
+        List<Integer> keys = new ArrayList<Integer>(geneSetSizeToGeneDatasMap.keySet());
+        Collections.sort(keys);
+        for (Integer geneSetSize: keys) {
+            final Set<GeneData> geneDatas = geneSetSizeToGeneDatasMap.get(geneSetSize);
             computeGeneScoresAndPValues(geneSetSize, geneDatas);
         }
     }
@@ -344,6 +350,7 @@ public class RigerImpl implements RigerAlgorithm {
      */
     private GeneData[] computeGeneRanks() {
         GeneData[] geneDatas = geneNameToGeneDataMap.values().toArray(new GeneData[0]);
+        sortGeneDatasByNameForStability(geneDatas);
         Comparator<GeneData> geneDataComparator =
             hairpinSetScoringAlgorithm.lowScoresRankFirst() ?
                 new GeneScoreAscendingComparator() : new GeneScoreDescendingComparator();
@@ -352,6 +359,15 @@ public class RigerImpl implements RigerAlgorithm {
             geneDatas[i].setGeneRank(i + 1);
         }
         return geneDatas;
+    }
+
+    private void sortGeneDatasByNameForStability(GeneData[] geneDatas) {
+        Comparator<GeneData> comparator = new Comparator<GeneData>() {
+            public int compare(GeneData geneData1, GeneData geneData2) {
+                return geneData1.getGeneName().compareTo(geneData2.getGeneName());
+            }
+        };
+        Arrays.sort(geneDatas, comparator);
     }
 
     /**
@@ -381,6 +397,7 @@ public class RigerImpl implements RigerAlgorithm {
      */
     private GeneData[] computePValueRanks() {
         GeneData[] geneDatas = geneNameToGeneDataMap.values().toArray(new GeneData[0]);
+        sortGeneDatasByNameForStability(geneDatas);
         Arrays.sort(geneDatas, new PValueAscendingComparator());
         for (int i = 0; i < geneDatas.length; i++) {
             geneDatas[i].setPValueRank(i + 1);
