@@ -1,4 +1,6 @@
-README last updated: 9/30/2013 (based on J Sullivan's twiki created 6/2013)
+[![Build Status](https://travis-ci.com/broadinstitute/rigerj.svg?token=N3vsppoZquQSGZBMS1Fh&branch=master)](https://travis-ci.com/broadinstitute/rigerj)
+
+README last updated: 3/23/2017
 
 rigerj
 ======
@@ -19,7 +21,7 @@ Follow the instructions under the Extentions link to install and run RIGER as a 
 Running RigerJ from the command line will vary slightly depending on what platform you are running on, 
 (e.g., Linux, Windows, Mac OS), and how Java is installed on your machine. But you should be able to 
 run it more or less like this:
-> java -jar rigerj-1.6.jar [options]
+> java -jar rigerj-1.7.0.jar [options]
 
 All options are optional, and are described below:
 
@@ -135,3 +137,4 @@ RigerJ outputs the data with the following column headers:
 * RigerJ 1.5b - Experimental extension to RIGER to apply weights to the hairpins. Original beta 2010-05-14.
 * RigerJ 1.6 - Fix bug where -adjustForHairpinSetSize command line option was not working.
                Fix off-by-one bug for gene scores with WtSum and!SecondBestRank scoring methods.
+* RigerJ 1.7 - Internal changes to address testability issues for JDK8
