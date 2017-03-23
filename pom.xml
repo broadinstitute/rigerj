@@ -85,7 +85,7 @@
     </plugins>
   </build>
 
-  <repositories>
+  <!--<repositories>
     <repository>
       <id>gpp-nexus</id>
       <url>http://gppops1.broadinstitute.org:8081/repository/maven-releases/</url>
@@ -129,6 +129,6 @@
         <enabled>true</enabled>
       </snapshots>
     </pluginRepository>
-  </pluginRepositories>
+  </pluginRepositories>-->
 
 </project>
