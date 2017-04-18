@@ -6,9 +6,9 @@
 
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.broadinstitute.rnai</groupId>
-  <artifactId>rigerj</artifactId>
+  <artifactId>rigerj-mortis</artifactId>
   <version>1.7.0</version>
-  <name>RigerJ</name>
+  <name>RigerJ-Mortis</name>
   <url>http://www.broadinstitute.org/rnai_platform</url>
 
   <dependencies>
