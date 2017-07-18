@@ -14,7 +14,7 @@ http://www.broadinstitute.org/cancer/software/GENE-E/
 
 Follow the instructions under the Extensions link to install and run RIGER as a GENE-E extension.
 
-## Building an executable JAR file
+## Building RigerJ
 
 RigerJ is built using Maven 3 (http://maven.apache.org/):
 
