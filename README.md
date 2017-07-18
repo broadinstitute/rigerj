@@ -30,7 +30,7 @@ Running RigerJ from the command line will vary slightly depending on what platfo
 (e.g., Linux, Windows, Mac OS), and how Java is installed on your machine. But you should be able to 
 run it more or less like this:
 
-> java -jar target/rigerj-2.0.0-assembly.jar [options]
+> java -jar target/rigerj-2.0.1-assembly.jar [options]
 
 All options are optional, and are described below:
 

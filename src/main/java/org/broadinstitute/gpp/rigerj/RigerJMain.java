@@ -15,7 +15,7 @@ import java.util.List;
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.GnuParser;
-import org.apache.commons.cli.OptionBuilder;
+import org.apache.commons.cli.Option;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 import org.broadinstitute.gpp.rigerj.api.GeneOutput;
@@ -35,7 +35,7 @@ import org.broadinstitute.gpp.rigerj.impl.RigerImpl;
 public class RigerJMain {
 
     private static final String VERSION_STRING =
-        "RigerJ 2.0.0\n\n" +
+        "RigerJ 2.0.1\n\n" +
         "For usage instructions, see https://github.com/broadinstitute/rigerj";
 
     private static final String INPUT_HEADERS_WITH_WEIGHTS = "Construct\tGeneSymbol\tNormalizedScore\tConstruct Rank\tHairpinWeight";
@@ -65,64 +65,64 @@ public class RigerJMain {
     @SuppressWarnings("static-access")
     private static Options initializeOptions() {
         Options options = new Options();
-        options.addOption(OptionBuilder
-                          .withLongOpt("help")
+        options.addOption(Option.builder("h")
+                          .longOpt("help")
                           .hasArg(false)
-                          .isRequired(false)
-                          .create());
-        options.addOption(OptionBuilder
-                          .withLongOpt("version")
+                          .required(false)
+                          .build());
+        options.addOption(Option.builder()
+                          .longOpt("version")
                           .hasArg(false)
-                          .isRequired(false)
-                          .create());
-        options.addOption(OptionBuilder
-                          .withLongOpt("inputFile")
+                          .required(false)
+                          .build());
+        options.addOption(Option.builder()
+                          .longOpt("inputFile")
                           .hasArg(true)
-                          .withType(String.class)
-                          .isRequired(false)
-                          .create());
-        options.addOption(OptionBuilder
-                          .withLongOpt("scoringMethod")
+                          .type(String.class)
+                          .required(false)
+                          .build());
+        options.addOption(Option.builder()
+                          .longOpt("scoringMethod")
                           .hasArg(true)
-                          .withType(String.class)
-                          .isRequired(false)
-                          .create());
-        options.addOption(OptionBuilder
-                          .withLongOpt("flattenWeights")
+                          .type(String.class)
+                          .required(false)
+                          .build());
+        options.addOption(Option.builder()
+                          .longOpt("flattenWeights")
                           .hasArg(true)
-                          .withType(Number.class)
-                          .isRequired(false)
-                          .create());
-        options.addOption(OptionBuilder
-                          .withLongOpt("numRandomScoresPerGeneSetSize")
+                          .type(Number.class)
+                          .required(false)
+                          .build());
+        options.addOption(Option.builder()
+                          .longOpt("numRandomScoresPerGeneSetSize")
                           .hasArg(true)
-                          .withType(Number.class)
-                          .isRequired(false)
-                          .create());
-        options.addOption(OptionBuilder
-                          .withLongOpt("alpha")
+                          .type(Number.class)
+                          .required(false)
+                          .build());
+        options.addOption(Option.builder()
+                          .longOpt("alpha")
                           .hasArg(true)
-                          .withType(Number.class)
-                          .isRequired(false)
-                          .create());
-        options.addOption(OptionBuilder
-                          .withLongOpt("randomSeed")
+                          .type(Number.class)
+                          .required(false)
+                          .build());
+        options.addOption(Option.builder()
+                          .longOpt("randomSeed")
                           .hasArg(true)
-                          .withType(Number.class)
-                          .isRequired(false)
-                          .create());
-        options.addOption(OptionBuilder
-                          .withLongOpt("outputFile")
+                          .type(Number.class)
+                          .required(false)
+                          .build());
+        options.addOption(Option.builder()
+                          .longOpt("outputFile")
                           .hasArg(true)
-                          .withType(String.class)
-                          .isRequired(false)
-                          .create());
-        options.addOption(OptionBuilder
-                          .withLongOpt("adjustForHairpinSetSize")
+                          .type(String.class)
+                          .required(false)
+                          .build());
+        options.addOption(Option.builder()
+                          .longOpt("adjustForHairpinSetSize")
                           .hasArg(true)
-                          .withType(Number.class)
-                          .isRequired(false)
-                          .create());
+                          .type(Number.class)
+                          .required(false)
+                          .build());
         return options;
     }
 
