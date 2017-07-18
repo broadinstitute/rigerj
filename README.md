@@ -1,11 +1,10 @@
 [![Build Status](https://travis-ci.com/broadinstitute/rigerj.svg?token=N3vsppoZquQSGZBMS1Fh&branch=master)](https://travis-ci.com/broadinstitute/rigerj)
 
-README last updated: 4/18/2017
+README last updated: 2017-07-18
 
 # rigerj
 
 Java implementation of RIGER and other gene enrichment methods, useful for RNAi and CRISPR screen analysis.
-
 
 ## RIGER and GENE-E
 
@@ -15,12 +14,23 @@ http://www.broadinstitute.org/cancer/software/GENE-E/
 
 Follow the instructions under the Extensions link to install and run RIGER as a GENE-E extension.
 
+## Building RigerJ
+
+RigerJ is built using Maven 3 (http://maven.apache.org/):
+
+> mvn package
+
+This creates in the `target` directory both a library artifact (e.g. `rigerj-x.y.z.jar`) (for use as 
+dependency in other projects) and an executable "assembly" JAR for direct command-line usage
+(e.g. `rigerj-x.y.z-assembly.jar`).
+
 ## Command Line Usage
 
 Running RigerJ from the command line will vary slightly depending on what platform you are running on, 
 (e.g., Linux, Windows, Mac OS), and how Java is installed on your machine. But you should be able to 
 run it more or less like this:
-> java -jar rigerj-2.0.0.jar [options]
+
+> java -jar target/rigerj-2.0.0-assembly.jar [options]
 
 All options are optional, and are described below:
 
