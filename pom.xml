@@ -11,6 +11,10 @@
   <name>RigerJ</name>
   <url>http://www.broadinstitute.org/genetic-perturbation-platform</url>
 
+  <properties>
+     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+   </properties>
+
   <dependencies>
     <dependency>
       <groupId>commons-cli</groupId>
@@ -32,7 +36,6 @@
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.7.0</version>
         <configuration>
-          <encoding>UTF-8</encoding>
           <source>1.8</source>
           <target>1.8</target>
         </configuration>
