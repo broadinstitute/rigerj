@@ -94,6 +94,24 @@
     </plugins>
   </build>
 
+  <!-- The "distributionManagement" section immediately below arranges for rigerj to be published
+       to GitHub Packages. In order for this to work, however, you need a "~/.m2/settings.xml" file
+       that has your GitHub username and your GitHub token in it. These are required for
+       authentication purposes. There's official documentation for this located here:
+
+       https://docs.github.com/en/packages/guides/configuring-apache-maven-for-use-with-github-packages
+
+       The above documentation page includes an entire sample "settings.xml" file in the
+       documentation. Search for "settings.xml" in the page.
+
+       Just in case this page goes stale, we're including a file in this repo called
+       "sample-settings.xml". Unless you have other settings that you need to merge in, you should
+       be able to use this file sample file as is. Just copy it to "~/.m2/settings.xml" and then
+       replace "USERNAME" with your GitHub username and "TOKEN" with your GitHub token.
+
+       Note that you only need to worry about this if you need to publish new rigerj artifacts.
+  -->
+
   <distributionManagement>
     <repository>
       <id>github</id>
