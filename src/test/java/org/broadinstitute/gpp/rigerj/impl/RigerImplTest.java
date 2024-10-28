@@ -68,9 +68,10 @@ public class RigerImplTest {
                 break;
             }
             String[] cells = line.split("\t", 0);
-            hairpinInputs.add(new HairpinData(new Integer(cells[3]),
+            int rank = Double.valueOf(cells[3]).intValue();
+            hairpinInputs.add(new HairpinData(rank,
                                               cells[0],
-                                              new Double(cells[2]),
+                                              Double.parseDouble(cells[2]),
                                               cells[1],
                                               1));
         }

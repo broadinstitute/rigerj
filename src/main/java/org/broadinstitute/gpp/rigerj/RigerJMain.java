@@ -199,11 +199,12 @@ public class RigerJMain {
                 break;
             }
             String[] cells = line.split("\t", 0);
-            hairpinDatas.add(new HairpinData(new Integer(cells[3]),
+            int rank = Double.valueOf(cells[3]).intValue();
+            hairpinDatas.add(new HairpinData(rank,
                                              cells[0],
-                                             new Double(cells[2]),
+                                             Double.parseDouble(cells[2]),
                                              cells[1],
-                                             cells.length == 5 ? new Double(cells[4]) : 1));
+                                             cells.length == 5 ? Double.parseDouble(cells[4]) : 1));
             
         }
         return hairpinDatas;
